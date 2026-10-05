@@ -591,7 +591,7 @@
                     <i class="fa-solid fa-paper-plane"></i> Get In Touch
                 </a>
                 <button class="btn-secondary" onclick="showResumeModal()">
-                    <i class="fa-solid fa-file-pdf"></i> Request Resume
+                    <i class="fa-solid fa-file-pdf"></i> Download Resume
                 </button>
             </div>
 
@@ -628,49 +628,47 @@
                 <div class="skill-category">
                     <h3><i class="fa-solid fa-file-excel"></i> Spreadsheet & Automation</h3>
                     <div class="skill-tags">
-                        <span class="tag highlight">Advanced Excel</span>
-                        <span class="tag highlight">Excel Macros / VBA</span>
-                        <span class="tag highlight">Pivot Tables</span>
-                        <span class="tag highlight">XLOOKUP</span>
-                        <span class="tag highlight">Power Query</span>
-                        <span class="tag highlight">Process Automation</span>
+                        <span class="tag">Advanced Excel</span>
+                        <span class="tag">Excel Macros / VBA</span>
+                        <span class="tag">Pivot Tables</span>
+                        <span class="tag">XLOOKUP</span>
+                        <span class="tag">Power Query</span>
+                        <span class="tag">Process Automation</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3><i class="fa-solid fa-chart-pie"></i> BI & Data Analytics</h3>
                     <div class="skill-tags">
-                        <span class="tag highlight">Power BI</span>
-                        <span class="tag highlight">SQL</span>
-                        <span class="tag highlight">MIS Reporting</span>
-                        <span class="tag highlight">Dynamic Dashboards</span>
-                        <span class="tag highlight">Reconciliation</span>
-                        <span class="tag highlight">Backlog Analysis</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">MIS Reporting</span>
+                        <span class="tag">Dynamic Dashboards</span>
+                        <span class="tag">Reconciliation</span>
+                        <span class="tag">Backlog Analysis</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3><i class="fa-solid fa-network-wired"></i> IT Infrastructure & Systems</h3>
                     <div class="skill-tags">
-                        <span class="tag highlight">Server Administration</span>
-                        <span class="tag highlight">IP Routing & Configuration</span>
-                        <span class="tag highlight">Client-Server Architecture</span>
-                        <span class="tag highlight">Exam Server Deployment</span>
-                        <span class="tag highlight">LAN/WAN Setup</span>
-                        <span class="tag highlight">System Troubleshooting</span>
+                        <span class="tag">IP Routing & Configuration</span>
+                        <span class="tag">Client-Server Architecture</span>
+                        <span class="tag">Exam Server Deployment</span>
+                        <span class="tag">LAN/WAN Setup</span>
+                        <span class="tag">System Troubleshooting</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3><i class="fa-solid fa-vault"></i> Finance & Operations Audit</h3>
                     <div class="skill-tags">
-                        <span class="tag highlight">Process Automation</span>
-                        <span class="tag highlight">Audit Operations</span>
-                        <span class="tag highlight">Accounts Payable (AP)</span>
-                        <span class="tag highlight">Accounts Receivable (AR)</span>
-                        <span class="tag highlight">Payroll Administration</span>
-                        <span class="tag highlight">Incentive Calculations</span>
-                        <span class="tag highlight">Stakeholder Management</span>
+                        <span class="tag">Audit Operations</span>
+                        <span class="tag">Accounts Payable (AP)</span>
+                        <span class="tag">Accounts Receivable (AR)</span>
+                        <span class="tag">Payroll Administration</span>
+                        <span class="tag">Incentive Calculations</span>
+                        <span class="tag">Stakeholder Management</span>
                     </div>
                 </div>
             </div>
@@ -824,9 +822,10 @@
             <i class="fa-solid fa-file-pdf" style="font-size: 2.8rem; color: var(--accent-violet); margin-bottom: 1rem;"></i>
             <h3 style="margin-bottom: 0.4rem; color: white;">Bharathwaj Surya Prakash</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Audit Analyst • Systems & Network Specialist • B.Sc. Mathematics</p>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="mailto:bharathwaj2219@gmail.com?subject=Resume%20Request%20-%20Bharathwaj" class="btn-primary" style="font-size: 0.9rem;">
-                    <i class="fa-solid fa-paper-plane"></i> Request Resume via Email
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <!-- Direct download link for the PDF file -->
+                <a href="BHARATHWAJ SURYAPRAKASH.pdf" download="BHARATHWAJ SURYAPRAKASH.pdf" class="btn-primary" style="font-size: 0.9rem;" onclick="closeResumeModal()">
+                    <i class="fa-solid fa-download"></i> Download Resume PDF
                 </a>
             </div>
         </div>
@@ -839,6 +838,17 @@
 
         function closeResumeModal() {
             document.getElementById('resumeModal').style.display = 'none';
+        }
+
+        // Helper function to trigger download programmatically
+        function downloadResume() {
+            const fileName = 'BHARATHWAJ SURYAPRAKASH.pdf';
+            const link = document.createElement('a');
+            link.href = fileName;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         window.onclick = function(event) {
