@@ -846,6 +846,22 @@
                 modal.style.display = "none";
             }
         }
+        window.onclick = function(event) {
+            let modal = document.getElementById('resumeModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function downloadResume() {
+            const fileName = 'BHARATHWAJ SURYAPRAKASH.pdf';
+            const link = document.createElement('a');
+            link.href = fileName;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     </script>
 </body>
 </html>
